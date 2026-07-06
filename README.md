@@ -77,7 +77,7 @@ The data dictionary defines each field and the KPI logic used throughout the pro
 
 Fulfillment had a 4.78% absence rate, above the overall absence rate of 3.4%. Because Fulfillment also had a high scheduled-shift volume, this creates a more material operational risk.
 
-### 2. Overnight shift had the highest reliability risk
+### 2. The overnight shift had the highest reliability risk
 
 Overnight had the highest late-arrival rate at 10.47% and the highest absence rate at 5.28%. This suggests overnight staffing may need closer schedule review, supervisor follow-up, or attendance support.
 
@@ -150,9 +150,6 @@ The analysis gives leadership a clearer view of where attendance issues are conc
 
 The recommended approach helps managers move from reactive attendance tracking to proactive workforce performance management.
 
-## Synthetic Data Notice
-
-All data in this project is synthetic and created for portfolio demonstration purposes. Names, departments, managers, attendance records, costs, and operational patterns are fictional.
 
 ## Author
 
