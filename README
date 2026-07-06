@@ -1,0 +1,314 @@
+# Workforce Attendance & Overtime Operations Analysis
+
+Operations analysis project focused on workforce attendance reliability, late arrivals, absence risk, overtime concentration, coverage gaps, KPI reporting, and data quality readiness.
+
+## Project Overview
+
+This project analyzes workforce attendance, late arrivals, absences, overtime usage, coverage gaps, and data quality issues for a synthetic workforce operations environment.
+
+The project was built from the perspective of an Operations Analyst / Data-Enhanced Operations Consultant supporting leadership with workforce reliability reporting, KPI development, SQL validation, Excel analysis, and practical business recommendations.
+
+This project is part of a broader **Workflow Optimization & Operations Analysis Portfolio** for Operations Analyst, Business Analyst, and Process Improvement roles.
+
+## Business Problem
+
+The organization lacks a centralized attendance performance view to identify workforce reliability risks, departments with repeated lateness or absence patterns, overtime concentration, schedule adherence issues, and timekeeping data quality problems.
+
+Without structured reporting, leaders may rely on manual review, reactive follow-up, or anecdotal concerns instead of clear KPI evidence. This limits the ability to manage coverage risk, control labor cost, coach repeat attendance issues, improve staffing decisions, and prepare reliable recurring reports.
+
+The analysis focuses on determining whether operational risk is being driven by absence patterns, late arrivals, overtime concentration, shift-level reliability issues, department staffing pressure, coverage gaps, or incomplete timekeeping data.
+
+## Project Objective
+
+The objective of this project was to analyze workforce attendance and overtime data, identify operational risk areas, define leadership-ready KPIs, validate findings with SQL, and recommend improvements that could increase schedule adherence, reduce avoidable overtime, improve attendance reliability, and strengthen workforce reporting.
+
+## Executive Summary
+
+This analysis gives operations leadership a clearer way to move from raw attendance records to operational decision-making.
+
+Instead of only knowing that attendance issues exist, the Director of Operations, Workforce Planning Manager, Fulfillment Manager, Customer Support Manager, Shift Supervisors, HR / People Operations, Finance leadership, and Operations Reporting owner can identify where risk is concentrated, which departments are driving overtime cost, which shifts need targeted review, and where data cleanup is required before recurring reporting.
+
+Key results from the sample dataset:
+
+| Metric | Result |
+|---|---:|
+| Scheduled Shifts | 7,079 |
+| Employees | 120 |
+| Departments | 6 |
+| Locations | 4 |
+| Attendance Rate | 96.6% |
+| Absence Rate | 3.4% |
+| Late Arrival Rate | 8.45% |
+| Late Employees with 3+ Late Arrivals | 97 |
+| High-Repeat Late Employees | 13 |
+| Overtime Hours | 1,414.5 |
+| Overtime Cost | $55,844.77 |
+| Coverage Gaps | 98 |
+| Data Quality Issue Rate | 2.09% |
+
+## Business Questions
+
+* What is the overall attendance rate?
+* Which departments have the highest absence risk?
+* Which shifts have the highest late-arrival risk?
+* How much overtime is being worked, and where is overtime cost concentrated?
+* Are certain departments or locations driving a disproportionate share of overtime?
+* Which employees represent the broad repeat-lateness population?
+* Which employees represent the targeted high-repeat lateness coaching population?
+* Are coverage gaps concentrated around specific days, shifts, locations, or departments?
+* What data quality issues could reduce reporting trust?
+* What KPIs should leadership monitor weekly?
+* What operational actions should managers take based on the findings?
+
+## Role & Approach
+
+In this project, I approached the problem as an Operations Analyst responsible for turning raw workforce records into leadership-ready operational insight.
+
+The analysis followed this approach:
+
+1. Defined the operational problem and stakeholder decision needs.
+2. Structured a synthetic attendance dataset around scheduled-shift records.
+3. Built KPI logic for attendance, absence, lateness, overtime, coverage gaps, and data quality.
+4. Used SQL to validate metrics and answer business questions.
+5. Used Excel to summarize findings, review trends, and create dashboard-ready analysis views.
+6. Translated findings into practical recommendations for operations, workforce planning, HR, finance, and reporting stakeholders.
+
+## Dashboard Preview
+
+![Dashboard Preview](assets/dashboard_preview.png)
+
+## Repository Structure
+
+```text
+workforce-attendance-operations-analysis/
+|
+|-- README.md
+|
+|-- data/
+|   |-- workforce_attendance_sample.csv
+|   |-- data_dictionary.xlsx
+|
+|-- excel/
+|   |-- workforce_attendance_analysis_workbook.xlsx
+|
+|-- sql/
+|   |-- workforce_attendance_analysis.sql
+|
+|-- assets/
+|   |-- dashboard_preview.png
+|
+|-- scripts/
+|   |-- build_project3_artifacts.mjs
+```
+
+## Dataset
+
+This project uses a representative synthetic sample dataset aligned to a larger workforce operations environment. The dataset is not based on real employee records.
+
+Dataset grain:
+
+**One row per employee scheduled shift**
+
+Dataset scope:
+
+| Attribute | Value |
+|---|---:|
+| Scheduled Shift Records | 7,079 |
+| Employees | 120 |
+| Departments | 6 |
+| Locations | 4 |
+| Shift Types | 4 |
+| Date Range | 2025-10-01 to 2025-12-29 |
+
+Core fields include employee, department, manager, location, role, schedule, shift, attendance status, actual clock times, late minutes, absence type, overtime hours, labor cost, coverage gap flags, data quality issue flags, risk level, and manager action category.
+
+The [data dictionary](data/data_dictionary.xlsx) defines each field and the KPI logic used throughout the project.
+
+## Tools Used
+
+| Tool | Purpose |
+|---|---|
+| Excel | KPI summary, trend analysis, department analysis, employee risk review, and data quality review |
+| SQL | Business-question-driven analysis and validation queries |
+| CSV | GitHub-readable synthetic dataset |
+| Power BI-style dashboard planning | Dashboard preview and KPI structure |
+| Synthetic data preparation | Representative sample data for portfolio analysis |
+
+## Core KPIs
+
+| KPI | Definition |
+|---|---|
+| Scheduled Shifts | Count of attendance records |
+| Attendance Rate | Present shifts divided by scheduled shifts |
+| Absence Rate | Absences divided by scheduled shifts |
+| Late Arrival Rate | Late arrivals divided by scheduled shifts |
+| Average Minutes Late | Average minutes late where late flag equals 1 |
+| Overtime Hours | Sum of overtime hours |
+| Overtime Cost | Sum of overtime labor cost |
+| Schedule Adherence | Actual hours worked divided by scheduled hours |
+| Late Employees with 3+ Late Arrivals | Employees with at least 3 late arrivals in the analysis period |
+| High-Repeat Late Employees | Employees with 9 or more late arrivals over 90 days |
+| Coverage Gap Count | Sum of coverage gap flags |
+| Data Quality Issue Rate | Data quality issue records divided by total records |
+
+## Key Findings
+
+### 1. Overall attendance reliability is strong, but targeted risk areas remain
+
+The overall attendance rate is **96.6%**, which indicates generally strong workforce reliability. However, department-level and shift-level patterns show that specific areas require closer review.
+
+### 2. Fulfillment has the highest absence risk
+
+Fulfillment has the highest absence rate at **4.78%**, compared with the overall absence rate of **3.4%**. It also has the largest scheduled shift volume in the sample, which makes the operational impact more material.
+
+### 3. Overnight shift has the highest lateness and absence risk
+
+The Overnight shift has the highest late arrival rate at **10.47%** and the highest absence rate at **5.28%**. This suggests overnight staffing may need closer schedule review, supervisor follow-up, or attendance support.
+
+### 4. Overtime cost is concentrated in Fulfillment and Customer Support
+
+Fulfillment generated **$17,947.91** in overtime cost, and Customer Support generated **$12,787.75**. Together, those two departments account for a large share of total overtime cost.
+
+### 5. Repeat lateness should be viewed in two tiers
+
+The broad repeat-lateness population includes **97 employees** with three or more late arrivals. This is useful for monitoring overall attendance behavior.
+
+The more targeted high-repeat lateness KPI identifies **13 employees** with nine or more late arrivals over 90 days. This is the more actionable group for coaching, policy review, or manager follow-up.
+
+### 6. Coverage gaps are limited but operationally important
+
+The dataset includes **98 coverage gaps**. Even when the total count is relatively limited, coverage gaps can affect service levels, shift handoffs, fulfillment productivity, and team workload.
+
+### 7. Data quality issues are small but important
+
+The data quality issue rate is **2.09%**. The most common issues are missing clock-out records, missing clock-in records, status/clock mismatches, and missing absence types. These issues should be resolved before using the dataset for recurring leadership reporting.
+
+## Manager and Stakeholder Impact
+
+This analysis is designed for specific leadership users, not just a generic manager audience.
+
+| Stakeholder | How They Would Use the Analysis |
+|---|---|
+| Director of Operations | Monitor workforce reliability, coverage risk, and department-level attendance performance |
+| Workforce Planning Manager | Identify staffing patterns, schedule pressure, shift coverage issues, and overtime drivers |
+| Fulfillment Manager | Review the department with the highest absence risk and highest overtime cost |
+| Customer Support Manager | Review overtime concentration and potential workload or scheduling issues |
+| Overnight Shift Supervisors | Investigate the shift with the highest late arrival and absence risk |
+| HR / People Operations | Review high-repeat lateness, coaching needs, policy exceptions, and attendance support opportunities |
+| Finance Leadership | Understand overtime labor cost and where avoidable cost may be concentrated |
+| Operations Reporting / Data Owner | Resolve missing clock events, status exceptions, and data quality issues before recurring reporting |
+
+The sample also includes synthetic manager-level analysis. The highest follow-up volumes appear under managers such as Alicia Gomez, Priya Shah, Luis Romero, Marcus Reed, Miles Bennett, and Harper Lee. These names are synthetic and included only to demonstrate how manager-level reporting could support targeted action.
+
+## Excel Workbook
+
+The Excel workbook includes a leadership-ready analysis view for workforce operations.
+
+| Sheet | Purpose |
+|---|---|
+| Executive Summary | KPI summary, leadership findings, and weekly trend chart |
+| Department Analysis | Attendance, absence, lateness, overtime, coverage, and data quality by department |
+| Weekly Trend | Attendance, absence, late arrival, overtime, and coverage trends by week |
+| Employee Risk | Employee-level risk, high-repeat lateness, absences, overtime, and coverage issues |
+| Data Quality | Data quality issue types and review priorities |
+| Raw_Data | Source attendance dataset for filtering and audit review |
+
+Workbook file:
+
+[workforce_attendance_analysis_workbook.xlsx](excel/workforce_attendance_analysis_workbook.xlsx)
+
+## SQL Analysis
+
+The SQL file is organized around business questions and KPI validation.
+
+SQL analysis includes:
+
+* Total scheduled shifts
+* Attendance status breakdown
+* Attendance rate
+* Absence rate by department
+* Late arrival rate by department
+* Average minutes late by department and employee
+* Overtime hours and cost by department
+* Broad repeat-lateness identification using the 3+ late-arrival threshold
+* High-repeat late employees using the 9+ late-arrival threshold
+* Absence and overtime relationship
+* Weekly and monthly trend analysis
+* Shift and day-of-week analysis
+* Data quality checks
+* Manager follow-up summary
+* Leadership risk summary
+
+SQL file:
+
+[workforce_attendance_analysis.sql](sql/workforce_attendance_analysis.sql)
+
+## Recommendations
+
+### 1. Prioritize Fulfillment attendance review
+
+Fulfillment has the highest absence rate and highest overtime cost. Leadership should review staffing levels, call-out patterns, supervisor follow-up processes, and whether overtime is being used to compensate for recurring absence risk.
+
+### 2. Review Overnight shift reliability
+
+Overnight has the highest late arrival and absence rates. Operations leadership should evaluate shift start-time adherence, handoff expectations, transportation or scheduling barriers, and supervisor coverage.
+
+### 3. Use targeted coaching for high-repeat lateness
+
+The high-repeat lateness population is limited to 13 employees using the 9+ late-arrivals-over-90-days threshold. This creates a more actionable coaching list than broad late-arrival tracking.
+
+### 4. Monitor the broader repeat-lateness population
+
+The 97 employees with 3+ late arrivals should not all be treated as immediate coaching cases, but this group can help HR and supervisors monitor attendance behavior before it becomes more severe.
+
+### 5. Monitor overtime concentration by department
+
+Fulfillment and Customer Support should be reviewed for workload, staffing, schedule coverage, and whether recurring overtime is tied to attendance gaps or demand patterns.
+
+### 6. Fix data quality issues before recurring reporting
+
+Missing clock-in, missing clock-out, missing absence type, and status/clock mismatch records should be corrected before leadership relies on recurring attendance dashboards.
+
+### 7. Establish a weekly workforce KPI review cadence
+
+Operations leadership should review attendance rate, absence rate, late-arrival rate, overtime cost, coverage gaps, and data quality issue rate weekly to identify early warning signs and assign follow-up actions.
+
+## Business Impact
+
+This analysis gives leadership a clearer way to move from raw attendance records to operational decision-making.
+
+Instead of only knowing that attendance issues exist, operations leadership can now identify where risk is concentrated, which departments are driving overtime cost, which shifts need targeted review, and where data cleanup is required before recurring reporting.
+
+Potential impact areas include:
+
+* **Director of Operations:** Improved visibility into workforce reliability, coverage gaps, and department-level attendance risk.
+* **Workforce Planning Manager:** Better ability to identify staffing patterns, shift coverage issues, and overtime drivers.
+* **Fulfillment Manager:** Targeted insight into the department with the highest absence risk and highest overtime cost.
+* **Customer Support Manager:** Clearer view of overtime concentration and potential scheduling or workload issues.
+* **Overnight Shift Supervisors:** Specific visibility into late-arrival and absence patterns on the highest-risk shift.
+* **HR / People Operations:** Better identification of repeat-lateness patterns that may require coaching, policy review, or attendance support.
+* **Finance Leadership:** Stronger visibility into overtime labor cost and where avoidable cost may be concentrated.
+* **Operations Reporting / Data Owner:** Clearer understanding of missing clock events, status exceptions, and data quality issues affecting reporting trust.
+
+The recommended approach helps managers move from reactive attendance tracking to proactive workforce performance management.
+
+## Analyst Capabilities Demonstrated
+
+* Operations analysis
+* Workforce performance analysis
+* KPI development
+* Excel-based business analysis
+* SQL analysis and validation
+* Dashboard planning
+* Data quality review
+* Overtime cost analysis
+* Trend analysis
+* Root cause thinking
+* Leadership reporting
+* Business recommendations
+
+
+## Author
+
+Brenton Nelson
+
