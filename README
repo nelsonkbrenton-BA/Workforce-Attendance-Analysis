@@ -24,20 +24,20 @@ Instead of only knowing that attendance issues exist, the Director of Operations
 
 Key results from the sample dataset:
 
-| Metric | Result |
-| ------ | ------: |
-| Scheduled Shifts | 7,079 |
-| Employees | 120 |
-| Departments | 6 |
-| Locations | 4 |
-| Attendance Rate | 96.6% |
-| Absence Rate | 3.4% |
-| Late Arrival Rate | 8.45% |
-| High-Repeat Late Employees | 13 |
-| Overtime Hours | 1,414.5 |
-| Overtime Cost | $55,844.77 |
-| Coverage Gaps | 98 |
-| Data Quality Issue Rate | 2.09% |
+| Metric                     | Result     |
+| -------------------------- | ----------:|
+| Scheduled Shifts           | 7,079      |
+| Employees                  | 120        |
+| Departments                | 6          |
+| Locations                  | 4          |
+| Attendance Rate            | 96.6%      |
+| Absence Rate               | 3.4%       |
+| Late Arrival Rate          | 8.45%      |
+| High-Repeat Late Employees | 13         |
+| Overtime Hours             | 1,414.5    |
+| Overtime Cost              | $55,844.77 |
+| Coverage Gaps              | 98         |
+| Data Quality Issue Rate    | 2.09%      |
 
 ## Dashboard Preview
 
@@ -49,14 +49,14 @@ This project uses a representative synthetic workforce attendance dataset. The d
 
 The dataset grain is one row per employee scheduled shift.
 
-| Attribute | Value |
-| --------- | -----: |
-| Scheduled Shift Records | 7,079 |
-| Employees | 120 |
-| Departments | 6 |
-| Locations | 4 |
-| Shift Types | 4 |
-| Date Range | 2025-10-01 to 2025-12-29 |
+| Attribute                 | Value                    |
+| ------------------------- | -----------------------: |
+| Scheduled Shift Records   | 7,079                    |
+| Employees                 | 120                      |
+| Departments               | 6                        |
+| Locations                 | 4                        |
+| Shift Types               | 4                        |
+| Date Range                | 2025-10-01 to 2025-12-29 |
 
 Core fields include employee, department, manager, location, role, shift, attendance status, scheduled and actual clock times, late minutes, absence type, overtime hours, overtime cost, coverage gap flags, data quality issue flags, and manager action category.
 
@@ -64,12 +64,12 @@ The data dictionary defines each field and the KPI logic used throughout the pro
 
 ## Tools Used
 
-| Tool | Purpose |
-| ---- | ------- |
-| Excel | KPI summary, trend analysis, department review, employee risk review, and data quality analysis |
-| SQL | KPI validation and business-question-driven analysis |
-| CSV | GitHub-readable source dataset |
-| Dashboard Planning | Power BI-style KPI layout and dashboard preview |
+| Tool               | Purpose                                                                                       |
+| ------------------ | --------------------------------------------------------------------------------------------- |
+| Excel              | KPI summary, trend analysis, department review, employee risk review, and data quality analysis |
+| SQL                | KPI validation and business-question-driven analysis                                           |
+| CSV                | GitHub-readable source dataset                                                                |
+| Dashboard Planning | Power BI-style KPI layout and dashboard preview                                                |
 
 ## Key Findings
 
@@ -97,27 +97,27 @@ The data quality issue rate was 2.09%. The most common issues were missing clock
 
 This analysis is designed for specific leadership users, not just a generic manager audience.
 
-| Stakeholder | How They Would Use the Analysis |
-| ----------- | ------------------------------- |
-| Director of Operations | Monitor workforce reliability, coverage risk, and department-level attendance performance |
-| Workforce Planning Manager | Identify staffing patterns, shift coverage issues, and overtime drivers |
-| Fulfillment Manager | Review the department with the highest absence risk and highest overtime cost |
-| Customer Support Manager | Review overtime concentration and potential workload or scheduling issues |
-| Overnight Shift Supervisors | Investigate the shift with the highest late-arrival and absence risk |
-| HR / People Operations | Review high-repeat lateness, coaching needs, and attendance support opportunities |
-| Finance Leadership | Understand overtime labor cost and where avoidable cost may be concentrated |
-| Operations Reporting Owner | Resolve data quality issues before recurring leadership reporting |
+| Stakeholder                 | How They Would Use the Analysis                                                        |
+| --------------------------- | -------------------------------------------------------------------------------------- |
+| Director of Operations      | Monitor workforce reliability, coverage risk, and department-level attendance performance |
+| Workforce Planning Manager  | Identify staffing patterns, shift coverage issues, and overtime drivers                 |
+| Fulfillment Manager         | Review the department with the highest absence risk and highest overtime cost           |
+| Customer Support Manager    | Review overtime concentration and potential workload or scheduling issues               |
+| Overnight Shift Supervisors | Investigate the shift with the highest late-arrival and absence risk                    |
+| HR / People Operations      | Review high-repeat lateness, coaching needs, and attendance support opportunities       |
+| Finance Leadership          | Understand overtime labor cost and where avoidable cost may be concentrated             |
+| Operations Reporting Owner  | Resolve data quality issues before recurring leadership reporting                       |
 
 ## Files Included
 
-| File | Description |
-| ---- | ----------- |
-| [workforce_attendance_sample.csv](data/workforce_attendance_sample.csv) | Synthetic source dataset |
-| [data_dictionary.xlsx](data/data_dictionary.xlsx) | Field definitions and KPI logic |
-| [workforce_attendance_analysis_workbook.xlsx](excel/workforce_attendance_analysis_workbook.xlsx) | Excel analysis workbook |
-| [workforce_attendance_analysis.sql](sql/workforce_attendance_analysis.sql) | SQL validation and analysis queries |
-| [dashboard_preview.png](assets/dashboard_preview.png) | Dashboard preview image |
-| [full_project_summary.md](docs/full_project_summary.md) | Expanded project summary |
+| File                                                                                           | Description                         |
+| ---------------------------------------------------------------------------------------------- | ----------------------------------- |
+| [workforce_attendance_sample.csv](data/workforce_attendance_sample.csv)                         | Synthetic source dataset            |
+| [data_dictionary.xlsx](data/data_dictionary.xlsx)                                               | Field definitions and KPI logic     |
+| [workforce_attendance_analysis_workbook.xlsx](excel/workforce_attendance_analysis_workbook.xlsx) | Excel analysis workbook             |
+| [workforce_attendance_analysis.sql](sql/workforce_attendance_analysis.sql)                       | SQL validation and analysis queries |
+| [dashboard_preview.png](assets/dashboard_preview.png)                                           | Dashboard preview image             |
+| [full_project_summary.md](docs/full_project_summary.md)                                         | Expanded project summary            |
 
 ## Recommendations
 
