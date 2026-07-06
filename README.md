@@ -41,7 +41,7 @@ Key results from the sample dataset:
 
 ## Dashboard Preview
 
-[<img width="1400" alt="Dashboard Preview" src="assets/dashboard_preview.png" />](https://github.com/nelsonkbrenton-BA/Workforce-Attendance-Analysis/blob/main/dashboard_preview.png?raw=true)
+<img width="1795" height="756" alt="dashboard_preview" src="https://github.com/user-attachments/assets/ff09c82d-5692-4132-85b3-0a5919b4ba23" />
 
 ## Dataset
 
