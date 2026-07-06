@@ -112,8 +112,8 @@ This analysis is designed for specific leadership users, not just a generic mana
 
 | File                                                                                           | Description                         |
 | ---------------------------------------------------------------------------------------------- | ----------------------------------- |
-[| [workforce_attendance_sample.csv](data/workforce_attendance_sample.csv)     ](https://github.com/nelsonkbrenton-BA/Workforce-Attendance-Analysis/blob/main/workforce_attendance_sample.csv)                    | Synthetic source dataset            |
-[| [data_dictionary.xlsx](data/data_dictionary.xlsx)    ](https://github.com/nelsonkbrenton-BA/Workforce-Attendance-Analysis/blob/main/data_dictionary.xlsx)                                           | Field definitions and KPI logic     |
+|[ [workforce_attendance_sample.csv](data/workforce_attendance_sample.csv)     ](https://github.com/nelsonkbrenton-BA/Workforce-Attendance-Analysis/blob/main/workforce_attendance_sample.csv)                    | Synthetic source dataset            |
+|[ [data_dictionary.xlsx](data/data_dictionary.xlsx)    ](https://github.com/nelsonkbrenton-BA/Workforce-Attendance-Analysis/blob/main/data_dictionary.xlsx)                                           | Field definitions and KPI logic     |
 |[ [workforce_attendance_analysis_workbook.xlsx](excel/workforce_attendance_analysis_workbook.xlsx)](https://github.com/nelsonkbrenton-BA/Workforce-Attendance-Analysis/blob/main/workforce_attendance_analysis_workbook.xlsx) | Excel analysis workbook             |
 |[ [workforce_attendance_analysis.sql](sql/workforce_attendance_analysis.sql) ](https://github.com/nelsonkbrenton-BA/Workforce-Attendance-Analysis/blob/main/workforce_attendance_analysis.sql)                      | SQL validation and analysis queries |
         |
