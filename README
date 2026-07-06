@@ -2,11 +2,15 @@
 
 Operations analysis project using synthetic workforce attendance data to identify attendance reliability, late-arrival risk, absence patterns, overtime concentration, coverage gaps, and data quality issues through Excel, SQL, and dashboard-ready KPI reporting.
 
+---
+
 ## Project Overview
 
 This project analyzes workforce attendance, absences, late arrivals, overtime usage, coverage gaps, and data quality issues in a synthetic workforce operations environment.
 
 The goal was to turn raw scheduled-shift records into leadership-ready insights that could help operations, workforce planning, HR, and finance leaders understand where attendance and labor cost risks are concentrated.
+
+---
 
 ## Business Problem
 
@@ -14,123 +18,138 @@ The organization lacked a centralized attendance performance view. Without struc
 
 This analysis helps move the organization from reactive attendance follow-up to proactive workforce performance management.
 
+---
+
 ## Executive Summary
 
 Key results from the sample dataset:
 
-| Metric | Result |
-|---|---:|
-| Scheduled Shifts | 7,079 |
-| Employees | 120 |
-| Departments | 6 |
-| Locations | 4 |
-| Attendance Rate | 96.6% |
-| Absence Rate | 3.4% |
-| Late Arrival Rate | 8.45% |
-| High-Repeat Late Employees | 13 |
-| Overtime Hours | 1,414.5 |
-| Overtime Cost | $55,844.77 |
-| Coverage Gaps | 98 |
-| Data Quality Issue Rate | 2.09% |
+**Workforce Scope**
+
+- **Scheduled Shifts:** 7,079
+- **Employees:** 120
+- **Departments:** 6
+- **Locations:** 4
+
+**Attendance Performance**
+
+- **Attendance Rate:** 96.6%
+- **Absence Rate:** 3.4%
+- **Late Arrival Rate:** 8.45%
+- **High-Repeat Late Employees:** 13
+
+**Operational and Cost Impact**
+
+- **Overtime Hours:** 1,414.5
+- **Overtime Cost:** $55,844.77
+- **Coverage Gaps:** 98
+- **Data Quality Issue Rate:** 2.09%
+
+---
 
 ## Dashboard Preview
 
 ![Dashboard Preview](assets/dashboard_preview.png)
 
+---
+
 ## Dataset
 
 This project uses a representative synthetic workforce attendance dataset.
 
-| Attribute | Value |
-|---|---:|
-| Dataset Grain | One row per employee scheduled shift |
-| Scheduled Shift Records | 7,079 |
-| Employees | 120 |
-| Departments | 6 |
-| Locations | 4 |
-| Shift Types | 4 |
-| Date Range | 2025-10-01 to 2025-12-29 |
+**Dataset Scope**
+
+- **Dataset Grain:** One row per employee scheduled shift
+- **Scheduled Shift Records:** 7,079
+- **Employees:** 120
+- **Departments:** 6
+- **Locations:** 4
+- **Shift Types:** 4
+- **Date Range:** 2025-10-01 to 2025-12-29
 
 Core fields include employee, department, manager, location, role, shift, attendance status, scheduled and actual clock times, late minutes, absence type, overtime hours, overtime cost, coverage gap flags, data quality issue flags, and manager action category.
 
-## Tools Used
-
-| Tool | Purpose |
-|---|---|
-| Excel | KPI summary, trend analysis, department review, employee risk review, and data quality analysis |
-| SQL | KPI validation and business-question-driven analysis |
-| CSV | GitHub-readable source dataset |
-| Dashboard Planning | Power BI-style KPI layout and dashboard preview |
+---
 
 ## Key Findings
 
-1. **Fulfillment had the highest absence risk**  
-   Fulfillment had a **4.78% absence rate**, above the overall absence rate of **3.4%**.
+### 1. Fulfillment had the highest absence risk
 
-2. **Overnight shift had the highest reliability risk**  
-   Overnight had the highest late-arrival rate at **10.47%** and the highest absence rate at **5.28%**.
+Fulfillment had a **4.78% absence rate**, above the overall absence rate of **3.4%**.
 
-3. **Overtime cost was concentrated in two departments**  
-   Fulfillment generated **$17,947.91** in overtime cost and Customer Support generated **$12,787.75**.
+### 2. The overnight shift had the highest reliability risk
 
-4. **High-repeat lateness was concentrated in a smaller employee group**  
-   The targeted coaching population was **13 employees** with **9 or more late arrivals over 90 days**.
+Overnight had the highest late-arrival rate at **10.47%** and the highest absence rate at **5.28%**.
 
-5. **Data quality issues were limited but important**  
-   The data quality issue rate was **2.09%**, mainly driven by missing clock events, status/clock mismatches, and missing absence types.
+### 3. Overtime cost was concentrated in two departments
+
+Fulfillment generated **$17,947.91** in overtime cost, while Customer Support generated **$12,787.75**.
+
+### 4. High-repeat lateness was concentrated in a smaller employee group
+
+The targeted coaching population was **13 employees** with **9 or more late arrivals over 90 days**.
+
+### 5. Data quality issues were limited but important
+
+The data quality issue rate was **2.09%**, mainly driven by missing clock events, status/clock mismatches, and missing absence types.
+
+---
 
 ## Stakeholder Impact
 
-| Stakeholder | How They Would Use the Analysis |
-|---|---|
-| Director of Operations | Monitor workforce reliability, coverage risk, and department-level attendance performance |
-| Workforce Planning Manager | Identify staffing patterns, shift coverage issues, and overtime drivers |
-| Fulfillment Manager | Review the department with the highest absence risk and highest overtime cost |
-| Customer Support Manager | Review overtime concentration and potential workload or scheduling issues |
-| Overnight Shift Supervisors | Investigate the shift with the highest late-arrival and absence risk |
-| HR / People Operations | Review high-repeat lateness, coaching needs, and attendance support opportunities |
-| Finance Leadership | Understand overtime labor cost and where avoidable cost may be concentrated |
-| Operations Reporting Owner | Resolve data quality issues before recurring leadership reporting |
+**Director of Operations**  
+Uses the analysis to monitor workforce reliability, coverage risk, and department-level attendance performance.
 
-## Files Included
+**Workforce Planning Manager**  
+Uses the analysis to identify staffing patterns, shift coverage issues, and overtime drivers.
 
-| File | Description |
-|---|---|
-| [`data/workforce_attendance_sample.csv`](data/workforce_attendance_sample.csv) | Synthetic source dataset |
-| [`data/data_dictionary.xlsx`](data/data_dictionary.xlsx) | Field definitions and KPI logic |
-| [`excel/workforce_attendance_analysis_workbook.xlsx`](excel/workforce_attendance_analysis_workbook.xlsx) | Excel analysis workbook |
-| [`sql/workforce_attendance_analysis.sql`](sql/workforce_attendance_analysis.sql) | SQL validation and analysis queries |
-| [`assets/dashboard_preview.png`](assets/dashboard_preview.png) | Dashboard preview image |
-| [`docs/full_project_summary.md`](docs/full_project_summary.md) | Expanded project summary |
+**Fulfillment Manager**  
+Uses the analysis to review the department with the highest absence risk and the highest overtime cost.
+
+**Customer Support Manager**  
+Uses the analysis to review overtime concentration and potential workload or scheduling issues.
+
+**Overnight Shift Supervisors**  
+Use the analysis to investigate the shift with the highest late-arrival and absence risk.
+
+**HR / People Operations**  
+Uses the analysis to review high-repeat lateness, coaching needs, and attendance support opportunities.
+
+**Finance Leadership**  
+Uses the analysis to understand overtime labor cost and where avoidable cost may be concentrated.
+
+**Operations Reporting Owner**  
+Uses the analysis to resolve data quality issues before recurring leadership reporting.
+
+---
 
 ## Recommendations
 
-* Prioritize Fulfillment attendance review due to elevated absence risk and overtime cost.
-* Review Overnight shift reliability, including start-time adherence, scheduling barriers, handoffs, and supervisor coverage.
-* Use targeted coaching for the 13 high-repeat late employees.
-* Monitor overtime concentration in Fulfillment and Customer Support.
-* Fix missing clock events, status mismatches, and missing absence types before recurring dashboard reporting.
-* Establish a weekly workforce KPI review cadence for operations leadership.
+- Prioritize Fulfillment attendance review due to elevated absence risk and overtime cost.
+- Review Overnight shift reliability, including start-time adherence, scheduling barriers, handoffs, and supervisor coverage.
+- Use targeted coaching for the 13 high-repeat late employees.
+- Monitor overtime concentration in Fulfillment and Customer Support.
+- Fix missing clock events, status mismatches, and missing absence types before recurring dashboard reporting.
+- Establish a weekly workforce KPI review cadence for operations leadership.
+
+---
 
 ## Analyst Capabilities Demonstrated
 
-* Operations analysis
-* Workforce performance analysis
-* KPI development
-* Excel-based business analysis
-* SQL analysis and validation
-* Dashboard planning
-* Data quality review
-* Overtime cost analysis
-* Trend analysis
-* Leadership reporting
-* Business recommendations
+- Operations analysis
+- Workforce performance analysis
+- KPI development
+- Excel-based business analysis
+- SQL analysis and validation
+- Dashboard planning
+- Data quality review
+- Overtime cost analysis
+- Trend analysis
+- Leadership reporting
+- Business recommendations
 
-## Synthetic Data Notice
-
-All data in this project is synthetic and created for portfolio demonstration purposes. Names, departments, managers, attendance records, costs, and operational patterns are fictional.
+---
 
 ## Author
 
 Brenton Nelson
-
